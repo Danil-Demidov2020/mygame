@@ -80,3 +80,24 @@ function renderMap(map) {
     document.getElementById('map').style.backgroundColor = map.color;
     document.getElementById('map').style.border = '2px solid ' + map.border;
 }
+
+function spawnCube(map, cube) {
+
+    let mapMinX = map.x;   
+    let mapMaxX = map.x + map.width - cube.width;
+
+    let mapMinY = map.y;
+    let mapMaxY = map.y + map.height - cube.height;
+
+    cube.x = Math.round(
+        mapMinX +
+        Math.random() * (mapMaxX - mapMinX)
+        );
+    
+    cube.y = Math.round(
+        mapMinY +
+        Math.random() * (mapMaxY - mapMinY)
+    ); 
+
+    return cube;
+}
